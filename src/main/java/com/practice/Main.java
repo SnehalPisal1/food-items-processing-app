@@ -1,9 +1,9 @@
-package com.sonarsource.cinema;
+package com.practice;
 
-import com.sonarsource.cinema.exception.GlobalException;
-import com.sonarsource.cinema.model.FoodItem;
-import com.sonarsource.cinema.service.FoodService;
-import com.sonarsource.cinema.util.CsvParser;
+import com.practice.exception.GlobalException;
+import com.practice.model.FoodItem;
+import com.practice.service.FoodService;
+import com.practice.util.CsvParser;
 
 import java.util.List;
 import java.util.logging.Logger;
