@@ -1,4 +1,4 @@
-package com.sonarsource.cinema.exception;
+package com.practice.exception;
 
 public class CsvParsingException extends RuntimeException{
 
