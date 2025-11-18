@@ -3,7 +3,7 @@ plugins {
     id("application")
 }
 
-group = "com.sonarsource"
+group = "com.practice"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -22,12 +22,12 @@ tasks.test {
 
 application{
 
-    mainClass.set("com.sonarsource.cinema.Main");
+    mainClass.set("com.practice.Main");
 }
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "com.sonarsource.cinema.Main"
+        attributes["Main-Class"] = "com.practice.Main"
     }
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
