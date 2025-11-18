@@ -1,4 +1,4 @@
-package com.sonarsource.cinema.model;
+package com.practice.model;
 
 import java.math.BigDecimal;
 
