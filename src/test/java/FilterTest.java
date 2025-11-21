@@ -1,5 +1,5 @@
-import com.sonarsource.cinema.model.FoodItem;
-import com.sonarsource.cinema.service.FoodService;
+import com.practice.model.FoodItem;
+import com.practice.service.FoodService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
