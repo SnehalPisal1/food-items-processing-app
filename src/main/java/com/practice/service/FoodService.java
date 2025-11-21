@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class FoodService {
     
-    private List<FoodItem> foodItems;
+    private final List<FoodItem> foodItems;
 
     private static final Logger logger = Logger.getLogger(FoodService.class.getName());
     public FoodService(List<FoodItem> foodItemList) {
@@ -20,22 +20,22 @@ public class FoodService {
 
     public List<FoodItem> sortByPrice(String order) {
 
-        switch (order) {
-            case "asc" :
+        return switch (order) {
+            case "asc" -> {
                 logger.info("---Ascending Sort Operation---");
 
-                return foodItems.stream()
-                    .sorted(Comparator.comparing(FoodItem::price)).toList();
-
-            case "desc" :
+                yield foodItems.stream()
+                        .sorted(Comparator.comparing(FoodItem::price)).toList();
+            }
+            case "desc" -> {
 
                 logger.info("---Descending Sort Operation---");
 
-                return foodItems.stream().
+                yield foodItems.stream().
                         sorted(Comparator.comparing(FoodItem::price).reversed()).toList();
-            default :
-                throw new IllegalArgumentException("Invalid sorting order");
-        }
+            }
+            default -> throw new IllegalArgumentException("Invalid sorting order");
+        };
     }
 
     public List<FoodItem> filterPrice(String operator , String value) {
