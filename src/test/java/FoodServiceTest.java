@@ -1,5 +1,5 @@
-import com.sonarsource.cinema.model.FoodItem;
-import com.sonarsource.cinema.service.FoodService;
+import com.practice.model.FoodItem;
+import com.practice.service.FoodService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class FoodServiceTest {
+class FoodServiceTest {
 
     private FoodService service = null;
     private List<FoodItem> foodItems =  null;
@@ -27,7 +27,7 @@ public class FoodServiceTest {
     void testSortByAscOrder(){
         List<FoodItem> actual=service.sortByPrice("asc");
         Assertions.assertEquals(foodItems.size() , actual.size());
-        Assertions.assertEquals(new BigDecimal("2.99"), actual.get(0).price());
+        Assertions.assertEquals(new BigDecimal("2.99"), actual.getFirst().price());
 
     }
 
@@ -36,7 +36,7 @@ public class FoodServiceTest {
 
         List<FoodItem> actual=service.sortByPrice("desc");
         Assertions.assertEquals(foodItems.size() , actual.size());
-        Assertions.assertEquals(new BigDecimal("9.99"), actual.get(0).price());
+        Assertions.assertEquals(new BigDecimal("9.99"), actual.getFirst().price());
 
     }
 
