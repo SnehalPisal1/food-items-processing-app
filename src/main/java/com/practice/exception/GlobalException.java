@@ -2,7 +2,7 @@ package com.practice.exception;
 
 import java.util.logging.Logger;
 
-public class GlobalException {
+public record GlobalException() {
 
     private static final Logger logger = Logger.getLogger(GlobalException.class.getName());
 
