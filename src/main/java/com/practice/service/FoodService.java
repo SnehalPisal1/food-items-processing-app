@@ -1,6 +1,6 @@
-package com.sonarsource.cinema.service;
+package com.practice.service;
 
-import com.sonarsource.cinema.model.FoodItem;
+import com.practice.model.FoodItem;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
