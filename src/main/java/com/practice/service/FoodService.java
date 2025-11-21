@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class FoodService {
-    
+
     private final List<FoodItem> foodItems;
 
     private static final Logger logger = Logger.getLogger(FoodService.class.getName());
@@ -48,10 +48,10 @@ public class FoodService {
         }
         BigDecimal val = new BigDecimal(value);
         return foodItems.stream().filter(item
-                -> camparePrice(item.price(), val,operator)).toList();
+                -> comparePrice(item.price(), val,operator)).toList();
     }
 
-    private boolean camparePrice(BigDecimal price, BigDecimal value, String operator) {
+    private boolean comparePrice(BigDecimal price, BigDecimal value, String operator) {
         int comparison = price.compareTo(value);
         return switch (operator) {
             case "<" -> comparison < 0;
@@ -81,7 +81,7 @@ public class FoodService {
     public void statistics() {
         // cheapest food item
         if (foodItems.isEmpty()) {
-            System.out.println("No food items available for statistics.");
+            logger.info("No food items available for statistics.");
             return;
         }
         FoodItem cheapItem = foodItems.stream().min(Comparator.comparing(FoodItem :: price)).orElseThrow();
@@ -96,9 +96,9 @@ public class FoodService {
         BigDecimal average = total.divide(BigDecimal.valueOf(count), 2, RoundingMode.HALF_UP);
 
 
-        System.out.println("Cheapest Item : "+ cheapItem);
-        System.out.println("Expensive Item : "+ expensive);
-        System.out.println("Average : "+average);
+        logger.info("Cheapest Item : "+ cheapItem);
+        logger.info("Expensive Item : "+ expensive);
+        logger.info("Average : "+ average);
 
 
     }
